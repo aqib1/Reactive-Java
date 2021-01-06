@@ -145,4 +145,12 @@ public class ReactiveJavaTest {
         });
     }
 
+    @Test
+    public void testFixedNoOfBackPressureUsingLimitRate() {
+        Flux.range(3, 20)
+                .log()
+                .limitRate(3)
+                .subscribe();
+    }
+
 }
